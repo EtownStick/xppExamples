@@ -1,0 +1,30 @@
+// X++ job.
+    static void MapJob()
+    {
+        MapDevice mDevice;
+        TabClock tClock;
+        TabPhone tPhone;
+        ;
+        // 1: Call the method as it is implemented on the map.
+        mDevice.doubleTheVoltage("Testing");
+    
+        // 2: Twice, call a method that is defined in the AOT under MapDevice > Methods.
+        mDevice.getTheVoltage();
+        mDevice.MapDevice::getTheVoltage();
+    
+        // 3: Activate the TabClock mapping on the map.
+        mDevice = tClock;
+    
+        // 4: Set fields that are defined in the AOT under MapDevice > Fields.
+        mDevice.brandName = "Contoso";
+        mDevice.batteryVoltage3 = 9;
+    
+        // 5: Call an inherited method. The toString method returns "Class xRecord".
+        print mDevice.toString();
+    
+        // 6: Call a method that is defined in the AOT only under MapDevice > Methods.
+        mDevice.MapDevice::getTheVoltage();
+    
+        // 7: Call the method as it is implemented on the table.
+        mDevice.doubleTheVoltage("Testing");
+    }
